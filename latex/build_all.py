@@ -514,8 +514,25 @@ TITLE = r"""
 {\sffamily\bfseries\fontsize{40}{48}\selectfont\color{headchap} 医学课程笔记整合}\\[1.2cm]
 {\sffamily\Large\color{headtealD} 临床执业医师 · 课程笔记整理}\\[0.4cm]
 {\sffamily\normalsize\color{black!60} 基础医学 ｜ 临床医学 ｜ 实践技能 ｜ 麻醉专科}\par
-\vfill {\small\color{black!50} 首版：Markdown 文字整合；本地图片/PDF 附件待矢量化或转写后择要纳入}\par\vspace*{1cm}
+\vfill {\small\color{black!55} \textcopyright\ 2026 FurinadeFountain\quad｜\quad CC BY-SA 4.0\quad｜\quad 仅供医学学习参考，非临床诊疗依据}\par\vspace*{0.35cm}
+{\scriptsize\color{black!45} github.com/FurinadeFountain/clinical-medicine-notes}\par\vspace*{1cm}
 \end{titlepage}
+
+\thispagestyle{empty}\onecolumn
+\vspace*{1.8cm}
+\begingroup\raggedright\setlength{\parskip}{0.7em}\color{black!80}
+{\sffamily\bfseries\large\color{headchap} 版权与声明}\par
+\textbf{编写与版权：}本作品为作者本人编写整理的医学课程学习笔记，\textcopyright\ 2026 FurinadeFountain，保留署名权利。
+
+\textbf{许可：}笔记内容依\textbf{知识共享 署名—相同方式共享 4.0 国际（CC BY-SA 4.0）}协议发布；随附的 LaTeX 排版工具依 MIT 协议发布。在署名、注明改动并以相同协议分发的前提下，你可自由共享与演绎本作品。
+
+\textbf{源仓库：}\,\url{https://github.com/FurinadeFountain/clinical-medicine-notes}
+
+\textbf{出处致谢：}文中少量参考性表格（ST 段抬高型心肌梗死心电图定位、贫血细胞学分类、Durie--Salmon 分期、方差分析表等）的事实数据，系据人民卫生出版社《诊断学》《内科学》《卫生统计学》等通行教材整理；事实数据不受著作权保护，特此致谢并注明来源。
+
+\textbf{免责声明：}本笔记仅供医学学习与考试复习参考，\textbf{并非临床诊疗依据}。任何临床决策请以最新临床指南与权威教材为准。书中选择题答案多为历年应试标准口径，存疑之处已就地标注，不保证与现行指南完全一致。作者不对因使用本资料所致的任何后果承担责任。
+\endgroup
+\clearpage
 
 \frontmatter
 \onecolumn
