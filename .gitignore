@@ -1,0 +1,23 @@
+# 系统
+.DS_Store
+**/.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# LaTeX 编译中间产物
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.xdv
+*.synctex.gz
+
+# 临时
+tmp/
+*.tmp

@@ -1,0 +1,270 @@
+% ============================================================
+%  医学课程笔记整合 — 矢量图表命令（替换源文 OCR 位图）
+%  调用：在正文原图位置写 \figChildPugh 等
+% ============================================================
+
+% ---- 表：Child-Pugh 分级 ----
+\newcommand{\figChildPugh}{%
+\begin{table*}[t]\centering\sffamily\small
+\caption{Child-Pugh 分级}
+\begin{mtbl}{colspec={Q[l]Q[c]Q[c]Q[c]}, row{1}={bg=headtint,font=\bfseries}}
+\toprule
+项目 & 1 分 & 2 分 & 3 分 \\
+\midrule
+血清胆红素 /(μmol/L) & $<$34.2 & 34.2$\sim$51.3 & $>$51.3 \\
+血浆白蛋白 /(g/L) & $>$35 & 28$\sim$35 & $<$28 \\
+凝血酶原延长时间 /s & 1$\sim$3 & 4$\sim$6 & $>$6 \\
+腹水 & 无 & 少量，易控制 & 中等量，难控制 \\
+肝性脑病 & 无 & 轻度 & 中度以上 \\
+\bottomrule
+\end{mtbl}
+\par\smallskip{\footnotesize 注：总分 5\textasciitilde6 分肝功能良好（A 级），7\textasciitilde9 分中等（B 级），10 分及以上差（C 级）。}
+\end{table*}}
+
+% ---- 表：血压水平分类 ----
+\newcommand{\figBPClass}{%
+\begin{table*}[t]\centering\sffamily\small
+\caption{血压水平分类和定义（单位：mmHg）}
+\begin{mtbl}{colspec={Q[l]Q[c]Q[c]Q[c]}, row{1}={bg=headtint,font=\bfseries}}
+\toprule
+分类 & 收缩压 & & 舒张压 \\
+\midrule
+正常血压 & $<$120 & 和 & $<$80 \\
+正常高值血压 & 120$\sim$139 & 和/或 & 80$\sim$89 \\
+高血压 & $\geq$140 & 和/或 & $\geq$90 \\
+\quad 1 级高血压（轻度） & 140$\sim$159 & 和/或 & 90$\sim$99 \\
+\quad 2 级高血压（中度） & 160$\sim$179 & 和/或 & 100$\sim$109 \\
+\quad 3 级高血压（重度） & $\geq$180 & 和/或 & $\geq$110 \\
+单纯收缩期高血压 & $\geq$140 & 和 & $<$90 \\
+\bottomrule
+\end{mtbl}
+\end{table*}}
+
+% ---- 表：高血压危险分层 ----
+\newcommand{\figBPRisk}{%
+\begin{table*}[t]\centering\sffamily\small
+\caption{高血压病人心血管危险分层标准}
+\begin{mtbl}{colspec={Q[l,3.6cm]Q[c]Q[c]Q[c]Q[c]}, row{1}={bg=headtint,font=\bfseries}, cell{1}{2}={c}}
+\toprule
+其他危险因素和病史 & {血压 130\textasciitilde139\\和/或 85\textasciitilde89} & 1 级 & 2 级 & 3 级 \\
+\midrule
+无 & --- & 低危 & 中危 & 高危 \\
+1\textasciitilde2 个其他危险因素 & 低危 & 低危 & 中/高危 & 很高危 \\
+{$\geq$3 个其他危险因素、靶器官\\损害、CKD 3 期或无并发症糖尿病} & 中/高危 & 高危 & 高危 & 很高危 \\
+{临床合并症、CKD $\geq$4 期\\或有并发症的糖尿病} & 高/很高危 & 很高危 & 很高危 & 很高危 \\
+\bottomrule
+\end{mtbl}
+\end{table*}}
+
+% ---- 表：高血压预后因素（三栏）----
+\newcommand{\figBPPrognosis}{%
+\begin{table*}[t]\centering\sffamily\footnotesize
+\caption{影响高血压病人心血管预后的重要因素}
+\begin{mtbl}{colspec={Q[l,5.0cm]Q[l,5.0cm]Q[l,4.4cm]}, row{1}={bg=headtint,font=\bfseries}}
+\toprule
+心血管危险因素 & 靶器官损害 & 伴随临床疾病 \\
+\midrule
+{\setlist[itemize]{leftmargin=1.1em,itemsep=0.5pt,topsep=0pt}\begin{itemize}
+  \item 高血压（1\textasciitilde3 级）
+  \item 年龄 $>$55 岁（男）/$>$65 岁（女）
+  \item 吸烟或被动吸烟
+  \item 糖耐量受损和/或空腹血糖受损
+  \item 血脂异常 TC$\geq$5.2、LDL-C$>$3.4 或 HDL-C$<$1.0 mmol/L
+  \item 早发心血管病家族史（一级亲属$<$50 岁）
+  \item 腹型肥胖（腰围男$\geq$90、女$\geq$85 cm）或 BMI$\geq$28
+  \item 同型半胱氨酸 $\geq$10 μmol/L
+\end{itemize}}
+&
+{\setlist[itemize]{leftmargin=1.1em,itemsep=0.5pt,topsep=0pt}\begin{itemize}
+  \item 左心室肥厚（Sokolow-Lyon$>$3.8 mV 或 LVMI 男$\geq$115、女$\geq$95 g/m²）
+  \item 颈动脉 IMT$\geq$0.9 mm 或斑块
+  \item 颈-股动脉 PWV$\geq$12 m/s
+  \item ABI$<$0.9
+  \item eGFR 30$\sim$59 mL/(min·1.73m²)
+  \item 微量白蛋白尿 30$\sim$300 mg/24h
+\end{itemize}}
+&
+{\setlist[itemize]{leftmargin=1.1em,itemsep=0.5pt,topsep=0pt}\begin{itemize}
+  \item 脑血管病（脑出血、缺血性卒中、TIA）
+  \item 心脏疾病（心梗、心绞痛、血运重建、心衰、房颤）
+  \item 肾脏疾病（糖尿病肾病、eGFR$<$30、蛋白尿$\geq$300 mg/24h）
+  \item 外周血管病
+  \item 视网膜病变（出血/渗出、视盘水肿）
+  \item 糖尿病
+\end{itemize}}
+\\
+\bottomrule
+\end{mtbl}
+\par\smallskip{\footnotesize 注：LVMI 左心室质量指数；IMT 颈动脉内-中膜厚度；ABI 踝肱指数；PWV 脉搏波传导速度。}
+\end{table*}}
+
+% ---- 表：GCS ----
+\newcommand{\figGCS}{%
+\begin{table*}[t]\centering\sffamily\small
+\caption{格拉斯哥昏迷评分（GCS）}
+\begin{mtbl}{colspec={Q[l]Q[c]Q[l]Q[c]Q[l]Q[c]}, row{1}={bg=headtint,font=\bfseries}}
+\toprule
+运动反应 & 计分 & 言语反应 & 计分 & 睁眼反应 & 计分 \\
+\midrule
+按吩咐完成动作 & 6 & 回答正确 & 5 & 自主睁眼 & 4 \\
+刺痛时定位反应 & 5 & 回答错误 & 4 & 呼唤睁眼 & 3 \\
+刺痛时屈曲反应 & 4 & 胡言乱语 & 3 & 刺痛睁眼 & 2 \\
+刺痛时过屈反应（去皮质）& 3 & 仅能发声 & 2 & 不能睁眼 & 1 \\
+刺痛时伸展反应（去脑）& 2 & 不能发声 & 1 & & \\
+刺痛时无反应 & 1 & & & & \\
+\bottomrule
+\end{mtbl}
+\end{table*}}
+
+% ---- 表：Apgar ----
+\newcommand{\figApgar}{%
+\begin{table*}[t]\centering\sffamily\small
+\caption{新生儿 Apgar 评分标准}
+\begin{mtbl}{colspec={Q[l]Q[c]Q[c]Q[c]}, row{1}={bg=headtint,font=\bfseries}}
+\toprule
+体征 & 0 分 & 1 分 & 2 分 \\
+\midrule
+皮肤颜色 & 青紫或苍白 & 躯干红，四肢青紫 & 全身红 \\
+心率（次/分）& 无 & $<$100 & $>$100 \\
+弹足底或插鼻管反应 & 无反应 & 有动作，如皱眉 & 哭、喷嚏 \\
+肌张力 & 松弛 & 四肢略屈曲 & 四肢活动 \\
+呼吸 & 无 & 慢，不规则 & 正常，哭声响 \\
+\bottomrule
+\end{mtbl}
+\end{table*}}
+
+% ---- 表：腰神经根定位 ----
+\newcommand{\figLumbarRoot}{%
+\begin{table*}[t]\centering\sffamily\small
+\caption{腰神经根病的神经定位}
+\begin{mtbl}{colspec={Q[c]Q[l]Q[l]Q[c]}, row{1}={bg=headtint,font=\bfseries}}
+\toprule
+受累神经 & 关键感觉区 & 关键运动肌 & 反射 \\
+\midrule
+$\mathrm{L_2}$ & 大腿中部 & 屈髋肌（髂腰肌）& --- \\
+$\mathrm{L_3}$ & 股骨内髁 & 膝伸肌（股四头肌）& 膝反射 \\
+$\mathrm{L_4}$ & 内踝 & 足背屈肌（胫前肌）& --- \\
+$\mathrm{L_5}$ & 第三跖趾关节背侧 & 足拇长伸肌 & --- \\
+$\mathrm{S_1}$ & 足跟外侧 & 足跖屈肌（小腿三头肌）& 踝反射 \\
+\bottomrule
+\end{mtbl}
+\end{table*}}
+
+% ---- 图：左右双腔支气管导管位置 ----
+\newcommand{\figDLT}{%
+\begin{figure*}[t]\centering
+\begin{tikzpicture}[scale=0.95,
+  airway/.style={draw=headtealD, line width=0.9pt},
+  tube/.style={draw=ansred, line width=1.4pt, line cap=round},
+  cuff/.style={draw=headtealD, fill=ruleteal, fill opacity=0.5},
+  lbl/.style={font=\footnotesize\sffamily}]
+  \begin{scope}[xshift=-3.6cm]
+    \draw[airway] (0,3.2) -- (0,1.0);
+    \draw[airway] (0,1.0) .. controls (0,0.4) and (-1.3,0.2) .. (-1.7,-0.6);
+    \draw[airway] (0,1.0) .. controls (0,0.4) and ( 1.3,0.2) .. ( 1.7,-0.6);
+    \draw[airway] (-1.7,-0.6) -- (-2.1,-1.3); \draw[airway] (-1.7,-0.6) -- (-1.3,-1.4);
+    \draw[airway] ( 1.7,-0.6) -- ( 2.1,-1.3); \draw[airway] ( 1.7,-0.6) -- ( 1.3,-1.4);
+    \draw[tube] (0,3.2) -- (0,1.0) .. controls (0,0.4) and (-1.3,0.2) .. (-1.55,-0.45);
+    \draw[cuff] (0,2.15) ellipse (0.22 and 0.16);
+    \draw[cuff, rotate around={-52:(-1.15,-0.05)}] (-1.15,-0.05) ellipse (0.2 and 0.13);
+    \node[lbl, align=center] at (0,-2.1) {左侧双腔管\\（支气管腔入左主支气管）};
+  \end{scope}
+  \begin{scope}[xshift=3.6cm]
+    \draw[airway] (0,3.2) -- (0,1.0);
+    \draw[airway] (0,1.0) .. controls (0,0.4) and (-1.3,0.2) .. (-1.7,-0.6);
+    \draw[airway] (0,1.0) .. controls (0,0.4) and ( 1.3,0.2) .. ( 1.7,-0.6);
+    \draw[airway] (-1.7,-0.6) -- (-2.1,-1.3); \draw[airway] (-1.7,-0.6) -- (-1.3,-1.4);
+    \draw[airway] ( 1.7,-0.6) -- ( 2.1,-1.3); \draw[airway] ( 1.7,-0.6) -- ( 1.3,-1.4);
+    \draw[tube] (0,3.2) -- (0,1.0) .. controls (0,0.4) and (1.3,0.2) .. (1.55,-0.45);
+    \draw[cuff] (0,2.15) ellipse (0.22 and 0.16);
+    \draw[cuff, rotate around={52:(1.15,-0.05)}] (1.15,-0.05) ellipse (0.2 and 0.13);
+    \fill[ansred] (1.32,-0.18) circle (1.1pt);
+    \draw[ansred, -{Stealth[length=4pt]}] (2.9,0.5) .. controls (2.2,0.4) .. (1.45,-0.12);
+    \node[lbl, color=ansred, align=center, anchor=west] at (2.4,1.0) {开孔\\右上肺通气};
+    \node[lbl, align=center] at (0,-2.1) {右侧双腔管\\（开孔对位右上叶支气管）};
+  \end{scope}
+\end{tikzpicture}
+\caption{左、右双腔支气管导管的正确位置（示意）}
+\end{figure*}}
+
+% ---- 图：神经肌肉传导监测 ----
+\newcommand{\figNMT}{%
+\begin{figure*}[t]\centering\sffamily\footnotesize
+\begin{tblr}{colspec={Q[l,2.7cm]Q[c,2.2cm]Q[c,2.2cm]Q[c,2.2cm]Q[c,2.2cm]},
+  row{1}={font=\bfseries,bg=headtint}, rowsep=4pt, colsep=4pt,
+  cell{1}{3}={c}, cell{1}{4}={c}}
+\toprule
+刺激方式 & 正常诱发 & I 相阻滞 & II 相阻滞 & 非去极化阻滞 \\
+\midrule
+四个成串（TOF）& \nmbar{1.4,1.4,1.4,1.4} & \nmbar{0.9,0.9,0.9,0.9} & \nmbar{1.0,0.8,0.55,0.32} & \nmbar{1.0,0.78,0.52,0.3} \\
+强直刺激 & \nmbar{1.4,1.4,1.4,1.4,1.4,1.4,1.4,1.4} & \nmbar{0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95} & \nmbar{1.2,1.05,0.9,0.75,0.6,0.48,0.38,0.3} & \nmbar{1.2,1.0,0.85,0.7,0.55,0.45,0.35,0.28} \\
+双短强直（DBS）& \nmbar{1.3,1.3,1.3,0,1.3,1.3,1.3} & \nmbar{0.9,0.9,0.9,0,0.9,0.9,0.9} & \nmbar{1.2,1.2,1.2,0,0.7,0.7,0.7} & \nmbar{1.2,1.2,1.2,0,0.65,0.65,0.65} \\
+强直后增强 & 无 & 无 & 有 \ \nmbar{0.7,0.6,0.5} & 有 \ \nmbar{0.7,0.6,0.5} \\
+\bottomrule
+\end{tblr}
+\caption{神经肌肉传导监测在不同阻滞类型下的反应模式（示意）}
+\end{figure*}}
+
+% ---- 图：体外循环 CPB ----
+\newcommand{\figCPB}{%
+\begin{figure*}[t]\centering
+\begin{tikzpicture}[
+  box/.style={draw=headtealD, fill=supplbg, rounded corners=1.5pt, inner sep=4pt,
+              font=\footnotesize\sffamily, align=center, minimum height=7mm},
+  big/.style={box, minimum width=2.6cm, minimum height=9mm},
+  >={Stealth[length=5pt]}, line width=0.8pt, color=headtealD,
+  lab/.style={font=\scriptsize\sffamily, color=black, inner sep=1pt}]
+  \node[big] (pt) at (0,5.2) {患者};
+  \node[box] (af) at (-5,3.3) {动脉过滤器};
+  \node[box] (mp) at (-5,1.8) {主泵};
+  \node[box] (ox) at (-5,0.1) {人工肺/\\热交换器};
+  \node[box] (vr) at (-1.2,1.4) {静脉\\贮血器};
+  \node[box] (f1) at (2.4,3.3) {过滤器};
+  \node[box] (p1) at (5.2,3.3) {附泵};
+  \node[box] (f2) at (2.4,1.0) {过滤器};
+  \node[box] (p2) at (5.2,1.0) {附泵};
+  \draw[->] (ox) -- (mp); \draw[->] (mp) -- (af);
+  \draw[->] (af) .. controls (-4.4,4.6) and (-2.4,5.4) .. (pt.west) node[lab,midway,above,sloped]{动脉插管};
+  \draw[->] (pt.south) .. controls (-0.6,3.6) and (-1.2,2.8) .. (vr.north) node[lab,midway,right]{静脉插管};
+  \draw[->] (vr) .. controls (-2.6,0.7) and (-4.2,-0.6) .. (ox.south);
+  \draw[->] (pt.south east) .. controls (2.0,4.6) .. (f1.north) node[lab,pos=0.4,above,sloped]{心脏切开吸引};
+  \draw[->] (f1) -- (p1); \draw[->] (p1) .. controls (5.2,-0.6) and (0.6,-0.8) .. (vr.south);
+  \draw[->] (pt.east) .. controls (4.6,4.6) and (3.0,2.0) .. (f2.north) node[lab,pos=0.25,above,sloped]{左心室引流};
+  \draw[->] (f2) -- (p2); \draw[->] (p2) .. controls (5.6,0.0) and (1.0,0.0) .. (vr.south east);
+\end{tikzpicture}
+\caption{体外循环（CPB）的基本设计原理}
+\end{figure*}}
+
+% ---- 图：烧伤面积新九分法 ----
+% 烧伤面积速览面板：整宽 strip(就地不浮动) = 四区要点双栏 + 分区占比表
+\newcommand{\figBurnRule}{%
+\begin{strip}\sffamily
+{\centering\bfseries\large\color{headtealD} 烧伤面积估算 · 中国九分法（成人）\par}\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+\begin{itemize}[leftmargin=1.4em,itemsep=2.5pt,topsep=0pt,parsep=0pt]
+  \item \textbf{头颈部 9\%}：发部 3 + 面部 3 + 颈部 3
+  \item \textbf{双上肢 18\%}（2×9）：双手 5 + 双前臂 6 + 双上臂 7
+\end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\begin{itemize}[leftmargin=1.4em,itemsep=2.5pt,topsep=0pt,parsep=0pt]
+  \item \textbf{躯干部 27\%}（3×9）：前躯干 13 + 后躯干 13 + 会阴 1
+  \item \textbf{双下肢 46\%}（5×9+1）：双足 7 + 小腿 13 + 大腿 21 + 双臀 5
+\end{itemize}
+\end{minipage}
+\smallskip
+{\centering\small
+\begin{mtbl}{width=0.9\linewidth, colspec={Q[l]Q[c]X[l]}, row{1}={bg=headtint,font=\bfseries}}
+\toprule
+部位 & 占比 & 细分 \\
+\midrule
+头颈部 & 9\% & 发部 3、面部 3、颈部 3 \\
+双上肢 & 18\% & 双手 5、双前臂 6、双上臂 7 \\
+躯干部 & 27\% & 前躯干 13、后躯干 13、会阴 1 \\
+双下肢 & 46\% & 双足 7、小腿 13、大腿 21、双臀 5 \\
+\bottomrule
+\end{mtbl}\par}
+\smallskip
+{\footnotesize 口诀：三三三、五六七、十三十三二十一、双臀五双足七、双腿十三会阴一。\quad
+注：小于 12 岁头颈 $+$（12$-$年龄）\%、双下肢 $-$（12$-$年龄）\%；成年女性双足、双臀各 6\%。}
+\end{strip}}

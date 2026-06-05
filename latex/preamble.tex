@@ -1,0 +1,399 @@
+% !TEX program = xelatex
+% ============================================================
+%  医学课程笔记整合 — 前言区（样式规范）
+%  字体：Latin = Latin Modern（LaTeX 默认）；CJK = ctex 默认(fontset=mac, 宋/黑/楷)
+%  主色：医学期刊式深墨绿蓝 + 青绿；少量暖色用于答案与装饰强调
+% ============================================================
+
+\usepackage{geometry}
+\geometry{a4paper, top=2.0cm, bottom=1.9cm, left=1.6cm, right=1.6cm, headsep=0.4cm}
+\setlength{\columnsep}{0.7cm}                 % 双栏栏间距
+\setlength{\columnseprule}{0pt}               % 跨栏小节标题下避免竖线穿过标题区
+\setlength{\headheight}{20pt}                 % fancyhdr 页眉高度，避免反复警告
+\AtBeginDocument{\small}                      % 正文整体略缩小；标题/图表另行设定字号
+\linespread{1.06}                             % 紧凑行距(长篇笔记)
+% 窄栏断行容差(减少溢出)
+\tolerance=3000
+\setlength{\emergencystretch}{3.5em}
+\hbadness=10000
+\xeCJKsetup{CheckSingle=true}                 % 避免行首孤字
+
+\usepackage{xcolor}
+% 配色方案 D：医学期刊式编辑配色。深墨绿蓝建立层级，青绿保留医学/教学感，陶红铜色点到为止。
+\definecolor{headchap}{HTML}{244B5A}       % 章标题：深墨绿蓝，接近印刷标题墨色
+\definecolor{headteal}{HTML}{238C8F}       % 节/主色：低饱和医学青绿
+\definecolor{headtealD}{HTML}{5D8388}      % 子标题/页眉：灰化青绿，降低压迫感
+\definecolor{accentcopper}{HTML}{B36A4B}   % 小面积暖色：装饰点、提示边线
+\definecolor{ruleteal}{HTML}{D7E5E7}       % 分隔/边框：浅蓝灰
+\definecolor{bulletblue}{HTML}{6CA1A5}     % 列表符号：柔和青绿
+\definecolor{supplbg}{HTML}{F8FBFA}        % 知识选读底色：近白微青
+\definecolor{ansred}{HTML}{9B443C}         % 题库答案色：医学期刊常见的克制砖红
+\definecolor{headtint}{HTML}{EEF6F6}       % 表格表头底：浅青灰
+\definecolor{rowtint}{HTML}{F7FBFB}        % 表格隔行浅底
+
+\usepackage{amsmath,amssymb}
+\usepackage{textcomp}
+\usepackage{gensymb}
+
+% ---------- Unicode 符号统一映射（源文 OCR 残留的特殊符号）----------
+% 算符/关系/箭头 → 数学模式；上下标 → \textsub/superscript；℃/° → 排版命令
+\usepackage{newunicodechar}
+% 运算符/箭头后允许断行(窄栏长公式折行,防溢出)
+\newunicodechar{→}{\ensuremath{\rightarrow}\allowbreak}
+\newunicodechar{←}{\ensuremath{\leftarrow}\allowbreak}
+\newunicodechar{↑}{\ensuremath{\uparrow}\allowbreak}
+\newunicodechar{↓}{\ensuremath{\downarrow}\allowbreak}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}\allowbreak}
+\newunicodechar{×}{\ensuremath{\times}\allowbreak}
+\newunicodechar{÷}{\ensuremath{\div}\allowbreak}
+\newunicodechar{±}{\ensuremath{\pm}\allowbreak}
+\newunicodechar{∓}{\ensuremath{\mp}\allowbreak}
+\newunicodechar{≤}{\ensuremath{\leq}\allowbreak}
+\newunicodechar{≥}{\ensuremath{\geq}\allowbreak}
+\newunicodechar{≠}{\ensuremath{\neq}\allowbreak}
+\newunicodechar{≈}{\ensuremath{\approx}\allowbreak}
+\newunicodechar{∝}{\ensuremath{\propto}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{∂}{\ensuremath{\partial}}
+\newunicodechar{∶}{\ensuremath{:}}
+\newunicodechar{∕}{/}
+\newunicodechar{−}{\ensuremath{-}}
+% 希腊字母
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{γ}{\ensuremath{\gamma}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{ε}{\ensuremath{\varepsilon}}
+\newunicodechar{η}{\ensuremath{\eta}}
+\newunicodechar{θ}{\ensuremath{\theta}}
+\newunicodechar{κ}{\ensuremath{\kappa}}
+\newunicodechar{λ}{\ensuremath{\lambda}}
+\newunicodechar{ν}{\ensuremath{\nu}}
+\newunicodechar{π}{\ensuremath{\pi}}
+\newunicodechar{ρ}{\ensuremath{\rho}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{τ}{\ensuremath{\tau}}
+\newunicodechar{φ}{\ensuremath{\varphi}}
+\newunicodechar{χ}{\ensuremath{\chi}}
+\newunicodechar{ψ}{\ensuremath{\psi}}
+\newunicodechar{ω}{\ensuremath{\omega}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{Ω}{\ensuremath{\Omega}}
+% 上下标
+\newunicodechar{₀}{\textsubscript{0}}
+\newunicodechar{₁}{\textsubscript{1}}
+\newunicodechar{₂}{\textsubscript{2}}
+\newunicodechar{₃}{\textsubscript{3}}
+\newunicodechar{₄}{\textsubscript{4}}
+\newunicodechar{₅}{\textsubscript{5}}
+\newunicodechar{⁰}{\textsuperscript{0}}
+\newunicodechar{¹}{\textsuperscript{1}}
+\newunicodechar{²}{\textsuperscript{2}}
+\newunicodechar{³}{\textsuperscript{3}}
+\newunicodechar{⁻}{\textsuperscript{\textminus}}
+\newunicodechar{⁺}{\textsuperscript{+}}
+% 度/摄氏度/其他
+\newunicodechar{℃}{\textdegree C}
+\newunicodechar{°}{\textdegree}
+\newunicodechar{‰}{\textperthousand}
+\newunicodechar{•}{\textbullet}
+\newunicodechar{·}{\ensuremath{\cdot}}
+\newunicodechar{…}{\dots}
+% 临床卷新增符号
+\newunicodechar{∴}{\ensuremath{\therefore}}
+\newunicodechar{∵}{\ensuremath{\because}}
+\newunicodechar{≦}{\ensuremath{\leqq}}
+\newunicodechar{≧}{\ensuremath{\geqq}}
+\newunicodechar{●}{\textbullet}
+\newunicodechar{➝}{\ensuremath{\rightarrow}}
+\newunicodechar{﹥}{\textgreater{}}
+\newunicodechar{⁹}{\textsuperscript{9}}
+\newunicodechar{🈲}{（禁）}
+% 罗马数字（分级用，源文 OCR 为 Unicode 罗马数字）
+\newunicodechar{Ⅰ}{I}\newunicodechar{Ⅱ}{II}\newunicodechar{Ⅲ}{III}\newunicodechar{Ⅳ}{IV}
+\newunicodechar{Ⅴ}{V}\newunicodechar{Ⅵ}{VI}\newunicodechar{Ⅶ}{VII}\newunicodechar{Ⅷ}{VIII}
+\newunicodechar{Ⅸ}{IX}\newunicodechar{Ⅹ}{X}\newunicodechar{Ⅺ}{XI}\newunicodechar{Ⅻ}{XII}
+% 注：U+2009 THIN SPACE / U+2002 EN SPACE 在转换管线中替换为普通空格
+
+% pandoc 紧凑列表命令（裸 body 需自定义）
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% 带圈数字 ①②③、性别符 ♂♀ 等路由到 CJK 字体（默认归 Latin 字体而缺字形）
+\xeCJKDeclareCharClass{CJK}{"2460->"24FF, "2600->"26FF, "2160->"216F}
+
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{tabularray}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shapes.geometric,shapes.misc,calc,fit,backgrounds,decorations.pathreplacing,patterns}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\usepackage[most]{tcolorbox}
+\usepackage{cuted}
+\usepackage{needspace}
+\setlength{\stripsep}{11pt plus 2pt minus 1pt}
+
+% ---------- 列表全局风格（紧凑、中文友好）----------
+% 窄栏紧凑列表
+\setlist[enumerate]{leftmargin=1.6em, itemsep=1pt, parsep=0.5pt, topsep=2pt}
+\setlist[itemize]{leftmargin=1.4em, itemsep=1pt, parsep=0.5pt, topsep=2pt, label=\textcolor{bulletblue}{\textbullet}}
+\setlist[enumerate,2]{label=(\arabic*), leftmargin=1.5em, itemsep=0.5pt}
+\setlist[itemize,2]{leftmargin=1.3em, label=\textcolor{ruleteal}{\textendash}}
+\setlist[itemize,3]{leftmargin=1.2em, label=\textcolor{ruleteal}{$\cdot$}}
+\setlist[enumerate,3]{label=\alph*., leftmargin=1.4em}
+
+% ---------- 章节标题样式（ctex 原生，避免 titlesec 冲突）----------
+\setcounter{secnumdepth}{0}   % 仅章编号；节标题保留源文「第N节 ｜」文字
+\setcounter{tocdepth}{1}      % 目录含章、节
+
+\ctexset{
+  chapter = {
+    name        = {第,章},
+    number      = {\chinese{chapter}},
+    format      = {\sffamily\bfseries\color{headchap}},
+    nameformat  = {\Huge},
+    titleformat = {\Huge},
+    aftername   = {\hspace{0.72em}},
+    beforeskip  = {6pt},
+    afterskip   = {26pt},
+    pagestyle   = {plain},
+  },
+  section = {
+    format      = {\sffamily\bfseries\Large\color{headteal}},
+    beforeskip  = {2.2ex},
+    afterskip   = {1.2ex},
+  },
+  subsection = {
+    format      = {\sffamily\bfseries\large\color{headtealD}},
+    beforeskip  = {1.6ex},
+    afterskip   = {0.8ex},
+  },
+}
+
+% ---------- 课程小节：标题跨双栏居中，标题下正文仍为双栏 ----------
+% 只由生成脚本用于课程笔记正文；题库附录保留普通 \section。
+\newcommand{\courseornament}{%
+  \begin{tikzpicture}[baseline=-0.45ex]
+    \draw[ruleteal, line width=0.45pt, line cap=round] (-2.85,0) -- (-0.42,0);
+    \draw[ruleteal, line width=0.45pt, line cap=round] (0.42,0) -- (2.85,0);
+    \fill[ruleteal] (-3.05,0) circle[radius=0.65pt];
+    \fill[ruleteal] (3.05,0) circle[radius=0.65pt];
+    \draw[accentcopper, line width=0.55pt] (0,0.095) -- (0.095,0) -- (0,-0.095) -- (-0.095,0) -- cycle;
+    \fill[accentcopper] (0,0) circle[radius=0.8pt];
+  \end{tikzpicture}%
+}
+
+\newcommand{\coursesection}[1]{%
+  \if\relax\detokenize{#1}\relax\else
+  \par\addvspace{2.4ex}%
+  \Needspace{7\baselineskip}%
+  \begingroup
+    \phantomsection
+    \addcontentsline{toc}{section}{#1}%
+    {\centering\sffamily\bfseries\Large\color{headteal} #1\par}%
+    \vspace{0.35ex}%
+    {\centering\courseornament\par}%
+  \endgroup
+  \par\nobreak\addvspace{0.9ex}%
+  \fi
+}
+
+\newcommand{\coursesubsection}[1]{%
+  \if\relax\detokenize{#1}\relax\else
+  \par\addvspace{1.5ex}%
+  \Needspace{4\baselineskip}%
+  {\noindent\sffamily\bfseries\large\color{headtealD} #1\par}%
+  \par\nobreak\addvspace{0.45ex}%
+  \fi
+}
+
+\newcommand{\coursesubsubsection}[1]{%
+  \if\relax\detokenize{#1}\relax\else
+  \par\addvspace{1.1ex}%
+  \Needspace{3\baselineskip}%
+  {\noindent\sffamily\bfseries\normalsize\color{headtealD} #1\par}%
+  \par\nobreak\addvspace{0.25ex}%
+  \fi
+}
+
+\newcommand{\courseparagraph}[1]{%
+  \if\relax\detokenize{#1}\relax\else
+  \par\addvspace{0.8ex}%
+  \Needspace{2\baselineskip}%
+  {\noindent\sffamily\bfseries\small\color{accentcopper} #1\par}%
+  \par\nobreak\addvspace{0.15ex}%
+  \fi
+}
+
+% 疼痛诊疗学的模块层标题：用于“诊断学/治疗学总论/治疗学分论”等中间层。
+\newcommand{\coursegroup}[1]{%
+  \if\relax\detokenize{#1}\relax\else
+  \par\addvspace{2.0ex}%
+  \Needspace{6\baselineskip}%
+  \begingroup
+    \phantomsection
+    \addcontentsline{toc}{section}{#1}%
+    {\centering\sffamily\bfseries\large\color{headtealD} #1\par}%
+    \vspace{0.35ex}%
+    {\centering
+      \begin{tikzpicture}[baseline=-0.45ex]
+        \draw[ruleteal, line width=0.36pt, line cap=round] (-2.1,0) -- (-0.28,0);
+        \draw[ruleteal, line width=0.36pt, line cap=round] (0.28,0) -- (2.1,0);
+        \draw[accentcopper, line width=0.45pt] (0,0.075) -- (0.075,0) -- (0,-0.075) -- (-0.075,0) -- cycle;
+      \end{tikzpicture}\par}%
+  \endgroup
+  \par\nobreak\addvspace{0.6ex}%
+  \fi
+}
+
+\providecommand{\painsectiontoc}[1]{#1}
+
+% 疼痛诊疗学的具体节标题：作为正文局部标题显示，不再创建全书私有目录层。
+\newcommand{\painsection}[1]{\coursesubsection{#1}}
+
+% 章下方一条浅青横线（呼应参考 PDF 标题区）
+\let\oldchapterheadendhook\relax
+
+% ---------- 目录：点线引导 + 章节着色 ----------
+\usepackage{titletoc}
+% 章：青色、加粗、带点线引导至页码
+\titlecontents{chapter}[0pt]
+  {\addvspace{6pt}\sffamily\bfseries\color{headchap}}
+  {}{}
+  {\hspace{0.45em}\color{ruleteal}\titlerule*[0.78pc]{.}\contentspage}
+% 节：缩进、常规色、点线
+\titlecontents{section}[2.2em]
+  {\addvspace{1pt}\small}
+  {}{}
+  {\hspace{0.45em}\color{ruleteal}\titlerule*[0.78pc]{.}\normalcolor\contentspage}
+% 兼容旧 .toc 中可能残留的 painsection 条目；新构建不再写入该目录层。
+\titlecontents{painsection}[4.6em]
+  {\addvspace{0pt}\footnotesize\color{black!70}}
+  {}{}
+  {\hspace{0.4em}\color{ruleteal}\titlerule*[0.82pc]{.}\normalcolor\contentspage}
+\makeatletter
+\providecommand*{\toclevel@painsection}{2}
+\@ifundefined{ttll@painsection}{\gdef\ttll@painsection{1}}{}
+\makeatother
+% 部分/附录分隔页：居中大字
+\titlecontents{part}[0pt]
+  {\addvspace{12pt}\centering\sffamily\bfseries\large\color{headchap}}
+  {}{}{}
+
+% ---------- 页眉页脚 ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\small\sffamily\color{headtealD}\leftmark}
+\fancyfoot[C]{\small\color{headtealD}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{ruleteal}\leaders\hrule height \headrulewidth\hfill}}
+
+% ---------- 分隔页（无编号·青色居中；双栏文档下单栏整页）----------
+\newcommand{\volpart}[1]{%
+  \clearpage \onecolumn
+  \phantomsection
+  \addcontentsline{toc}{part}{#1}%
+  \markboth{#1}{#1}%
+  \thispagestyle{empty}%
+  \null\vfill
+  {\centering\sffamily\bfseries\fontsize{32}{38}\selectfont\color{headchap} #1\par}%
+  \vskip 1.2em
+  {\centering\color{accentcopper}\rule{0.36\textwidth}{0.9pt}\par}%
+  \vfill\clearpage \twocolumn
+}
+
+% ---------- 普通课程章：保留 ctex 章样式，同时修正 fancyhdr 页眉 ----------
+\newcommand{\coursechapter}[1]{%
+  \chapter{#1}%
+  \markboth{#1}{#1}%
+}
+
+% ---------- 可选整页章入口；默认正文使用 \coursechapter，保持全书一致 ----------
+\newcommand{\disciplinechapter}[1]{%
+  \clearpage \onecolumn
+  \refstepcounter{chapter}%
+  \phantomsection
+  \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}#1}%
+  \markboth{#1}{#1}%
+  \thispagestyle{empty}%
+  \null\vfill
+  {\centering\sffamily\bfseries\Large\color{headchap} 第\chinese{chapter}章\par}%
+  \vskip 1.0em
+  {\centering\sffamily\bfseries\fontsize{36}{44}\selectfont\color{headchap} #1\par}%
+  \vskip 1.2em
+  {\centering\color{accentcopper}\rule{0.42\textwidth}{0.9pt}\par}%
+  \vfill\clearpage \twocolumn
+}
+
+% ---------- 名词解释 / 问答题 / 难点集萃：带色标签块 ----------
+% 用法：\noteblock{名词解释} 后接列表内容
+\newcommand{\noteblock}[1]{%
+  \par\addvspace{1.2ex}%
+  \noindent\begin{tikzpicture}[baseline]
+    \node[anchor=west, inner sep=0pt] (a) at (0,0)
+      {\color{accentcopper}\rule{3.2pt}{1.05em}};
+    \node[anchor=west, inner sep=0pt, xshift=6pt] at (a.east)
+      {\sffamily\bfseries\large\color{headtealD} #1};
+  \end{tikzpicture}\par\nobreak\addvspace{0.5ex}%
+}
+
+% ---------- 补充内容 · 知识选读：浅青旁注框 ----------
+\newtcolorbox{supplbox}[1][补充内容 · 知识选读]{%
+  enhanced, breakable,
+  colback=supplbg, colframe=ruleteal, boxrule=0.4pt, arc=1.2mm,
+  left=2.6mm, right=2.6mm, top=1.6mm, bottom=1.6mm,
+  borderline west={1.8pt}{0pt}{accentcopper},
+  fonttitle=\sffamily\bfseries\small\color{white},
+  coltitle=white, colbacktitle=headtealD,
+  attach boxed title to top left={xshift=2mm, yshift=-2mm},
+  boxed title style={arc=0.6mm, boxrule=0pt},
+  title={#1},
+}
+
+% ---------- 题库：题目 / 答案 ----------
+% \qitem{题号}{题干} ... \begin{choices}...\end{choices} ... \ans{X}
+\newcommand{\qitem}[2]{\par\addvspace{0.6ex}\noindent\textbf{#1.}~#2\par\nobreak}
+\newcommand{\ans}[1]{\par\nopagebreak{\sffamily\bfseries\color{ansred}答案：#1}\par\addvspace{0.4ex}}
+\newcommand{\qreview}[1]{\par\nopagebreak\noindent{\footnotesize\sffamily\color{headtealD}\textbf{\textcolor{ansred}{疑点：}}#1}\par\addvspace{0.4ex}}
+\newlist{choices}{enumerate}{1}
+\setlist[choices]{label=\Alph*、, leftmargin=1.9em, itemsep=0.3pt, topsep=1pt, parsep=0pt}
+
+% ---------- 表格通用样式（浅青表头 + booktabs 横线）----------
+\UseTblrLibrary{booktabs}
+\NewTblrEnviron{mtbl}
+\SetTblrInner[mtbl]{rowsep=2.2pt, colsep=5pt}
+
+% ---------- 节间分隔符（替换源文 --- ）----------
+\newcommand{\coursediv}{\par\addvspace{0.6ex}\centerline{\color{ruleteal}\rule{0.30\textwidth}{0.6pt}}\par\addvspace{0.6ex}}
+\let\anesdiv\coursediv
+
+% ---------- 引用块（定义性内容，浅青左标）----------
+\renewenvironment{quote}
+  {\begin{list}{}{\setlength{\leftmargin}{1.4em}\setlength{\rightmargin}{0em}}\item[]%
+   \begingroup\color{black}}
+  {\endgroup\end{list}}
+
+% ---------- 神经肌肉监测柱状助手 ----------
+\newcommand{\nmbar}[1]{% #1=逗号分隔高度(0为空隙)
+  \begin{tikzpicture}[baseline=-0.5pt,x=1.15mm,y=2.7mm]
+    \foreach \h [count=\i from 0] in {#1}{%
+      \pgfmathparse{\h>0 ? 1 : 0}%
+      \ifnum\pgfmathresult=1 \fill[headteal] (\i,0) rectangle ++(0.62,\h);\fi}
+  \end{tikzpicture}}
+
+\usepackage[hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{bookmark}
