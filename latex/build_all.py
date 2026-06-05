@@ -514,7 +514,7 @@ TITLE = r"""
 {\sffamily\bfseries\fontsize{40}{48}\selectfont\color{headchap} 医学课程笔记整合}\\[1.2cm]
 {\sffamily\Large\color{headtealD} 临床执业医师 · 课程笔记整理}\\[0.4cm]
 {\sffamily\normalsize\color{black!60} 基础医学 ｜ 临床医学 ｜ 实践技能 ｜ 麻醉专科}\par
-\vfill {\small\color{black!55} \textcopyright\ 2026 FurinadeFountain\quad｜\quad CC BY-SA 4.0\quad｜\quad 仅供医学学习参考，非临床诊疗依据}\par\vspace*{0.35cm}
+\vfill {\small\color{black!55} \textcopyright\ 2026 Phila\quad｜\quad CC BY-SA 4.0\quad｜\quad 仅供医学学习参考，非临床诊疗依据}\par\vspace*{0.35cm}
 {\scriptsize\color{black!45} github.com/FurinadeFountain/clinical-medicine-notes}\par\vspace*{1cm}
 \end{titlepage}
 
@@ -522,7 +522,7 @@ TITLE = r"""
 \vspace*{1.8cm}
 \begingroup\raggedright\setlength{\parskip}{0.7em}\color{black!80}
 {\sffamily\bfseries\large\color{headchap} 版权与声明}\par
-\textbf{编写与版权：}本作品为作者本人编写整理的医学课程学习笔记，\textcopyright\ 2026 FurinadeFountain，保留署名权利。
+\textbf{编写与版权：}本作品为作者本人编写整理的医学课程学习笔记，\textcopyright\ 2026 Phila，保留署名权利。
 
 \textbf{许可：}笔记内容依\textbf{知识共享 署名—相同方式共享 4.0 国际（CC BY-SA 4.0）}协议发布；随附的 LaTeX 排版工具依 MIT 协议发布。在署名、注明改动并以相同协议分发的前提下，你可自由共享与演绎本作品。
 
